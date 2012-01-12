@@ -199,7 +199,7 @@
         <text macro="translator"/>
       </substitute>
     </names>
-    <text macro="recipient" prefix=". "/>
+    <text macro="recipient" prefix=", "/>
   </macro>
   <macro name="recipient-short">
     <names variable="recipient">
@@ -331,7 +331,7 @@
   <macro name="container-title">
     <choose>
       <if type="legal_case" match="none">
-        <text term="in" text-case="capitalize-first" suffix=" "/>
+        <text term="in" suffix=" "/>
         <text variable="container-title" text-case="title" font-style="italic"/>
       </if>
     </choose>
@@ -368,7 +368,7 @@
             </group>
           </if>
           <else>
-            <text variable="edition" text-case="capitalize-first" suffix="."/>
+            <text variable="edition" suffix="."/>
           </else>
         </choose>
       </if>
@@ -423,9 +423,9 @@
         <text variable="page" prefix=" "/>
       </else-if>
       <else-if type="bill book graphic legal_case motion_picture report song" match="any">
-        <group prefix=". " delimiter=", ">
+        <group prefix=", " delimiter=", ">
           <group>
-            <text term="volume" form="short" text-case="capitalize-first" suffix=" "/>
+            <text term="volume" form="short" suffix=" "/>
             <number variable="volume" form="numeric"/>
           </group>
           <group>
@@ -436,11 +436,11 @@
         </group>
       </else-if>
       <else-if type="chapter paper-conference" match="any">
-        <group prefix=". " delimiter=", ">
+        <group prefix=", " delimiter=", ">
           <choose>
             <if variable="page" match="none">
               <group>
-                <text term="volume" form="short" text-case="capitalize-first" suffix=" "/>
+                <text term="volume" form="short" suffix=" "/>
                 <number variable="volume" form="numeric"/>
               </group>
             </if>
@@ -674,7 +674,7 @@
         <choose>
           <if variable="title" match="none"/>
           <else>
-            <text variable="genre" text-case="capitalize-first" prefix=". "/>
+            <text variable="genre" prefix=", "/>
           </else>
         </choose>
         <text macro="event" prefix=" "/>
@@ -682,7 +682,7 @@
         <text macro="issued" prefix=", "/>
       </else-if>
       <else-if variable="publisher-place publisher" match="any">
-        <group prefix=". " delimiter=", ">
+        <group prefix=", " delimiter=", ">
           <choose>
             <if type="thesis">
               <text variable="genre" text-case="capitalize-first"/>
@@ -792,11 +792,11 @@
         </group>
       </group>
       <text macro="locators"/>
-      <text macro="collection-title" prefix=". "/>
+      <text macro="collection-title" prefix=", "/>
       <text macro="issue"/>
       <text macro="locators-newspaper" prefix=", "/>
       <text macro="locators-journal"/>
-      <text macro="access" prefix=". "/>
+      <text macro="access" prefix=", "/>
     </layout>
   </bibliography>
 </style>
