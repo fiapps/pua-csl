@@ -37,10 +37,10 @@
         <single> Tradotto da e a cura di</single>
         <multiple> Tradotti da e a cura di</multiple>
       </term>
-      <term name="ordinal-01">1°</term>
-      <term name="ordinal-02">2°</term>
-      <term name="ordinal-03">3°</term>
-      <term name="ordinal-04">4°</term>
+      <term name="ordinal-01">°</term>
+      <term name="ordinal-02">°</term>
+      <term name="ordinal-03">°</term>
+      <term name="ordinal-04">°</term>
     </terms>
   </locale>
   <locale xml:lang="en">
