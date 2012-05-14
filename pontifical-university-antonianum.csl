@@ -654,9 +654,9 @@
           <text macro="issued"/>
         </group>
       </else-if>
-      <else>
+      <else-if type="webpage" match="none">
         <text macro="issued" prefix=", "/>
-      </else>
+      </else-if>
     </choose>
   </macro>
   <macro name="issue">
@@ -686,9 +686,9 @@
           <text macro="issued"/>
         </group>
       </else-if>
-      <else>
+      <else-if type="webpage" match="none">
         <text macro="issued" prefix=", "/>
-      </else>
+      </else-if>
     </choose>
   </macro>
   <macro name="access-note">
@@ -703,7 +703,10 @@
       </choose>
       <choose>
         <if type="legal_case" match="none">
-          <text variable="URL"/>
+          <group delimiter=": ">
+            <date variable="accessed" form="numeric" prefix="Internet (" suffix=")"/>
+            <text variable="URL"/>
+          </group>
         </if>
       </choose>
     </group>
@@ -720,7 +723,10 @@
       </choose>
       <choose>
         <if type="legal_case" match="none">
-          <text variable="URL"/>
+          <group delimiter=": ">
+            <date variable="accessed" form="numeric" prefix="Internet (" suffix=")"/>
+            <text variable="URL"/>
+          </group>
         </if>
       </choose>
     </group>
