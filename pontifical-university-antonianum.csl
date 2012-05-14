@@ -244,11 +244,8 @@
       <if variable="title" match="none">
         <text variable="genre"/>
       </if>
-      <else-if type="bill book graphic legal_case motion_picture report song" match="any">
-        <text variable="title" text-case="title" font-style="italic"/>
-      </else-if>
       <else>
-        <text variable="title" text-case="title" quotes="true"/>
+        <text variable="title" text-case="title" font-style="italic"/>
       </else>
     </choose>
   </macro>
@@ -261,11 +258,8 @@
           </if>
         </choose>
       </if>
-      <else-if type="bill book graphic legal_case motion_picture report song" match="any">
-        <text variable="title" text-case="title" font-style="italic"/>
-      </else-if>
       <else>
-        <text variable="title" text-case="title" quotes="true"/>
+        <text variable="title" text-case="title" font-style="italic"/>
       </else>
     </choose>
   </macro>
@@ -284,11 +278,8 @@
           </else-if>
         </choose>
       </if>
-      <else-if type="bill book graphic legal_case motion_picture report song" match="any">
-        <text variable="title" text-case="title" form="short" font-style="italic"/>
-      </else-if>
       <else>
-        <text variable="title" text-case="title" form="short" quotes="true"/>
+        <text variable="title" text-case="title" form="short" font-style="italic"/>
       </else>
     </choose>
   </macro>
