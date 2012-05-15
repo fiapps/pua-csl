@@ -402,7 +402,7 @@
   <macro name="locators">
     <choose>
       <if type="article-journal">
-        <text variable="volume" prefix=" "/>
+        <text variable="volume" prefix=", "/>
         <group prefix=", ">
           <text term="issue" form="short" suffix=" "/>
           <number variable="issue"/>
