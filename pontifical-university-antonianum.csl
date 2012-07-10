@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" default-locale="it-IT" demote-non-dropping-particle="sort-only" initialize-with=". ">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="sort-only" initialize-with=". ">
   <info>
     <title>Pontifical University Antonianum</title>
     <id>https://raw.github.com/fiapps/pua-csl/master/pontifical-university-antonianum.csl</id>
@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2012-05-15T18:18:39+00:00</updated>
+    <updated>2012-07-10T12:02:31+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="it">
