@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2012-07-10T12:20:53+00:00</updated>
+    <updated>2012-07-10T18:34:37+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="it">
@@ -245,7 +245,7 @@
         <text variable="genre"/>
       </if>
       <else>
-        <text variable="title" text-case="title" font-style="italic"/>
+        <text variable="title" text-case="capitalize-first" font-style="italic"/>
       </else>
     </choose>
   </macro>
@@ -259,7 +259,7 @@
         </choose>
       </if>
       <else>
-        <text variable="title" text-case="title" font-style="italic"/>
+        <text variable="title" text-case="capitalize-first" font-style="italic"/>
       </else>
     </choose>
   </macro>
@@ -279,7 +279,7 @@
         </choose>
       </if>
       <else>
-        <text variable="title" text-case="title" form="short" font-style="italic"/>
+        <text variable="title" text-case="capitalize-first" form="short" font-style="italic"/>
       </else>
     </choose>
   </macro>
@@ -315,7 +315,7 @@
     <choose>
       <if type="legal_case" match="none">
         <text term="in" text-case="lowercase" suffix=" "/>
-        <text variable="container-title" text-case="title" font-style="italic"/>
+        <text variable="container-title" text-case="capitalize-first" font-style="italic"/>
       </if>
     </choose>
   </macro>
@@ -323,12 +323,12 @@
     <choose>
       <if type="legal_case" match="none">
         <text term="in" suffix=" "/>
-        <text variable="container-title" text-case="title" font-style="italic"/>
+        <text variable="container-title" text-case="capitalize-first" font-style="italic"/>
       </if>
     </choose>
   </macro>
   <macro name="collection-title">
-    <text variable="collection-title" text-case="title"/>
+    <text variable="collection-title" text-case="capitalize-first"/>
     <text variable="collection-number" prefix=" "/>
   </macro>
   <macro name="edition-note">
