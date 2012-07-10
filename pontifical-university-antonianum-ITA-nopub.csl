@@ -3,7 +3,7 @@
   <info>
     <title>Pontifical University Antonianum (ITA, senza editrice)</title>
     <id>https://raw.github.com/fiapps/pua-csl/master/pontifical-university-antonianum-ITA-nopub.csl</id>
-    <link href="https://raw.github.com/fiapps/pua-csl/master/pontifical-university-antonianum.csl" rel="self"/>
+    <link href="https://raw.github.com/fiapps/pua-csl/master/pontifical-university-antonianum-ITA-nopub.csl" rel="self"/>
     <link href="http://www.antonianum.eu/download/norme/normemetodologiche.pdf" rel="documentation"/>
     <author>
       <name>Fr. John Lawrence M. Polis, FI</name>
@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style (Italian, without publisher)</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2012-07-10T11:54:29+00:00</updated>
+    <updated>2012-07-10T12:24:15+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="it">
@@ -98,7 +98,7 @@
           <choose>
             <if variable="author">
               <names variable="editor translator" delimiter=", ">
-                <label form="verb" text-case="capitalize-first" suffix=" "/>
+                <label form="verb" text-case="lowercase" suffix=" "/>
                 <name delimiter="-"/>
               </names>
             </if>
@@ -235,7 +235,7 @@
   </macro>
   <macro name="interviewer">
     <names variable="interviewer" delimiter=", ">
-      <label form="verb" prefix=" " text-case="capitalize-first" suffix=" "/>
+      <label form="verb" prefix=" " text-case="lowercase" suffix=" "/>
       <name delimiter="-"/>
     </names>
   </macro>
@@ -627,7 +627,7 @@
       </if>
       <else>
         <group delimiter=", ">
-          <text variable="archive_location" text-case="capitalize-first"/>
+          <text variable="archive_location" text-case="lowercase"/>
           <text variable="archive"/>
           <text variable="archive-place"/>
         </group>

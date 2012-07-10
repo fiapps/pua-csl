@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2012-07-10T12:02:31+00:00</updated>
+    <updated>2012-07-10T12:20:53+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="it">
@@ -98,7 +98,7 @@
           <choose>
             <if variable="author">
               <names variable="editor translator" delimiter=", ">
-                <label form="verb" text-case="capitalize-first" suffix=" "/>
+                <label form="verb" text-case="lowercase" suffix=" "/>
                 <name delimiter="-"/>
               </names>
             </if>
@@ -235,7 +235,7 @@
   </macro>
   <macro name="interviewer">
     <names variable="interviewer" delimiter=", ">
-      <label form="verb" prefix=" " text-case="capitalize-first" suffix=" "/>
+      <label form="verb" prefix=" " text-case="lowercase" suffix=" "/>
       <name delimiter="-"/>
     </names>
   </macro>
@@ -624,7 +624,7 @@
       </if>
       <else>
         <group delimiter=", ">
-          <text variable="archive_location" text-case="capitalize-first"/>
+          <text variable="archive_location" text-case="lowercase"/>
           <text variable="archive"/>
           <text variable="archive-place"/>
         </group>
