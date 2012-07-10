@@ -469,13 +469,10 @@
         <text variable="publisher"/>
       </if>
       <else>
-        <text variable="publisher-place"/>
-        <!-- publisher is optional. Omit it.
         <group delimiter=", ">
           <text variable="publisher"/>
           <text variable="publisher-place"/>
         </group>
-        -->
       </else>
     </choose>
   </macro>
