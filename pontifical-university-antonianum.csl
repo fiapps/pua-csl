@@ -15,34 +15,6 @@
     <updated>2012-07-10T20:27:12+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
-  <locale xml:lang="it">
-    <style-options punctuation-in-quote="false"/>
-    <terms>
-      <term name="et-al">e A.</term>
-      <term name="and">e</term>
-      <term name="ibid">ibid.</term>
-      <term name="editor" form="short">
-        <single>a cura di</single>
-        <multiple>a cura di</multiple>
-      </term>
-      <term name="collection-editor" form="short">
-        <single>a cura di</single>
-        <multiple>a cura di</multiple>
-      </term>
-      <term name="editortranslator" form="verb-short">
-        <single>trad. da e a cura di</single>
-        <multiple>trad. da e a cura di</multiple>
-      </term>
-      <term name="editortranslator" form="verb">
-        <single> Tradotto da e a cura di</single>
-        <multiple> Tradotti da e a cura di</multiple>
-      </term>
-      <term name="ordinal-01">°</term>
-      <term name="ordinal-02">°</term>
-      <term name="ordinal-03">°</term>
-      <term name="ordinal-04">°</term>
-    </terms>
-  </locale>
   <locale xml:lang="en">
     <terms>
       <term name="editortranslator" form="verb-short">
