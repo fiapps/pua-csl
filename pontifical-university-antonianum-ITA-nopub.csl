@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style (Italian, without publisher)</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2012-07-11T11:07:06+00:00</updated>
+    <updated>2013-01-03T11:13:06+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="it">
@@ -58,23 +58,19 @@
   <macro name="editor-translator">
     <group delimiter=", ">
       <choose>
-        <if variable="author">
-          <choose>
-            <if variable="container-author">
-              <group>
-                <names variable="container-author">
-                  <label form="verb-short" prefix=" " text-case="lowercase" suffix=" "/>
-                  <name delimiter="-"/>
-                </names>
-              </group>
-            </if>
-          </choose>
-          <names variable="editor translator" delimiter=", ">
-            <label form="verb-short" text-case="lowercase" suffix=" "/>
-            <name delimiter="-"/>
-          </names>
+        <if variable="container-author">
+          <group>
+            <names variable="container-author">
+              <label form="verb-short" prefix=" " text-case="lowercase" suffix=" "/>
+              <name delimiter="-"/>
+            </names>
+          </group>
         </if>
       </choose>
+      <names variable="editor translator" delimiter=", ">
+        <label form="verb-short" text-case="lowercase" suffix=" "/>
+        <name delimiter="-"/>
+      </names>
     </group>
   </macro>
   <macro name="secondary-contributors-note">
@@ -108,36 +104,32 @@
       <if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
         <group delimiter=", ">
           <choose>
-            <if variable="author">
-              <choose>
-                <if variable="container-author">
-                  <group>
-                    <names variable="container-author">
-                      <label form="verb-short" prefix=" " text-case="lowercase" suffix=" "/>
-                      <name delimiter="-"/>
-                    </names>
-                  </group>
-                </if>
-              </choose>
-              <!--This includes page numbers after the container author, e.g. for Introductions -->
-              <choose>
-                <if variable="container-author author" match="all">
-                  <group delimiter=", ">
-                    <text variable="page"/>
-                    <names variable="editor translator" delimiter=", ">
-                      <label form="verb" suffix=" "/>
-                      <name delimiter="-"/>
-                    </names>
-                  </group>
-                </if>
-                <else>
-                  <names variable="editor translator" delimiter=", ">
-                    <label form="verb" text-case="lowercase" suffix=" "/>
-                    <name delimiter="-"/>
-                  </names>
-                </else>
-              </choose>
+            <if variable="container-author">
+              <group>
+                <names variable="container-author">
+                  <label form="verb-short" prefix=" " text-case="lowercase" suffix=" "/>
+                  <name delimiter="-"/>
+                </names>
+              </group>
             </if>
+          </choose>
+          <!--This includes page numbers after the container author, e.g. for Introductions -->
+          <choose>
+            <if variable="container-author author" match="all">
+              <group delimiter=", ">
+                <text variable="page"/>
+                <names variable="editor translator" delimiter=", ">
+                  <label form="verb" suffix=" "/>
+                  <name delimiter="-"/>
+                </names>
+              </group>
+            </if>
+            <else>
+              <names variable="editor translator" delimiter=", ">
+                <label form="verb" text-case="lowercase" suffix=" "/>
+                <name delimiter="-"/>
+              </names>
+            </else>
           </choose>
         </group>
       </if>
@@ -152,11 +144,6 @@
   <macro name="contributors-note">
     <names variable="author">
       <name sort-separator=", " delimiter="-" font-variant="small-caps"/>
-      <label form="short" prefix=", "/>
-      <substitute>
-        <names variable="editor"/>
-        <names variable="translator"/>
-      </substitute>
     </names>
     <text macro="recipient-note"/>
   </macro>
@@ -202,10 +189,6 @@
   <macro name="contributors-short">
     <names variable="author">
       <name form="short" delimiter="-" font-variant="small-caps"/>
-      <substitute>
-        <names variable="editor"/>
-        <names variable="translator"/>
-      </substitute>
     </names>
     <text macro="recipient-short"/>
   </macro>
