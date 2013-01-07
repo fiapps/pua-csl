@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style (Italian, without publisher)</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2013-01-07T17:04:11+00:00</updated>
+    <updated>2013-01-07T17:33:42+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="it">
@@ -550,7 +550,7 @@
         <label variable="locator" form="short" prefix=" "/>
         <text variable="page" prefix=" "/>
       </if>
-      <else-if type="chapter paper-conference" match="any">
+      <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
         <label variable="locator" form="short" prefix=", "/>
         <text variable="page" prefix=" "/>
       </else-if>
@@ -558,7 +558,7 @@
   </macro>
   <macro name="locators-chapter">
     <choose>
-      <if type="chapter paper-conference" match="any">
+      <if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
         <choose>
           <!--If author and container-author are present, page numbers are in macro container-contributor. Leave them out here-->
           <if variable="author container-author" match="all">
