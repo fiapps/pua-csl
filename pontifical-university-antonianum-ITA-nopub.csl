@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style (Italian, without publisher)</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2013-01-03T16:46:59+00:00</updated>
+    <updated>2013-01-07T17:04:11+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="it">
@@ -523,17 +523,22 @@
         <text macro="pages"/>
       </if>
       <else-if type="article-journal">
-        <text variable="locator" prefix=" p. "/>
+        <label variable="locator" form="short" prefix=" "/>
+        <text variable="page" prefix=" "/>
       </else-if>
       <else-if type="legal_case"/>
       <else>
         <group prefix=", ">
           <choose>
-            <if locator="page" match="none">
-              <label variable="locator" form="short" suffix=" "/>
+            <if locator="page">
+              <!--The "norme" say not to use "pp.", although it's unclear whether this is specific to Italian.-->
+              <label variable="locator" form="short" plural="never" suffix=" "/>
             </if>
+            <else>
+              <label variable="locator" form="short" suffix=" "/>
+            </else>
           </choose>
-          <text variable="locator" prefix="p. "/>
+          <text variable="locator"/>
         </group>
       </else>
     </choose>
@@ -541,10 +546,13 @@
   <macro name="pages">
     <choose>
       <if type="article-journal">
-        <text variable="page" prefix=" p. "/>
+        <!--no comma in prefix-->
+        <label variable="locator" form="short" prefix=" "/>
+        <text variable="page" prefix=" "/>
       </if>
       <else-if type="chapter paper-conference" match="any">
-        <text variable="page" prefix=", p. "/>
+        <label variable="locator" form="short" prefix=", "/>
+        <text variable="page" prefix=" "/>
       </else-if>
     </choose>
   </macro>
@@ -570,7 +578,8 @@
   <macro name="locators-journal">
     <choose>
       <if type="article-journal">
-        <text variable="page" prefix=" p. "/>
+        <label variable="locator" form="short" prefix=" "/>
+        <text variable="page" prefix=" "/>
       </if>
     </choose>
   </macro>
