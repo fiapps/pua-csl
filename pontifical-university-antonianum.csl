@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2013-01-07T17:33:24+00:00</updated>
+    <updated>2013-03-10T14:35:59+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="en">
@@ -493,7 +493,7 @@
       </if>
       <else-if type="article-journal">
         <label variable="locator" form="short" prefix=" "/>
-        <text variable="page" prefix=" "/>
+        <text variable="locator" prefix=" "/>
       </else-if>
       <else-if type="legal_case"/>
       <else>
