@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style (Italian, without publisher)</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2013-03-10T14:38:02+00:00</updated>
+    <updated>2013-03-11T18:36:21+00:00</updated>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
   <locale xml:lang="it">
@@ -500,11 +500,12 @@
                   <group>
                     <text term="volume" form="short" text-case="lowercase" suffix=" "/>
                     <number variable="volume" form="numeric"/>
-                    <label variable="locator" form="short" prefix=", " suffix=" "/>
+                    <!--The "norme" say not to use "pp.". Although it's unclear whether this is specific to Italian, all locators (not just here) are cuttently forced to singular.-->
+                    <label variable="locator" form="short" plural="never" prefix=", " suffix=" "/>
                   </group>
                 </if>
                 <else>
-                  <label variable="locator" form="short" suffix=" "/>
+                  <label variable="locator" form="short" plural="never" suffix=" "/>
                 </else>
               </choose>
             </if>
@@ -523,7 +524,7 @@
         <text macro="pages"/>
       </if>
       <else-if type="article-journal">
-        <label variable="locator" form="short" prefix=" "/>
+        <label variable="locator" form="short" plural="never" prefix=" "/>
         <text variable="locator" prefix=" "/>
       </else-if>
       <else-if type="legal_case"/>
@@ -531,11 +532,10 @@
         <group prefix=", ">
           <choose>
             <if locator="page">
-              <!--The "norme" say not to use "pp.", although it's unclear whether this is specific to Italian.-->
               <label variable="locator" form="short" plural="never" suffix=" "/>
             </if>
             <else>
-              <label variable="locator" form="short" suffix=" "/>
+              <label variable="locator" form="short" plural="never" suffix=" "/>
             </else>
           </choose>
           <text variable="locator"/>
@@ -547,11 +547,11 @@
     <choose>
       <if type="article-journal">
         <!--no comma in prefix-->
-        <label variable="locator" form="short" prefix=" "/>
+        <label variable="locator" form="short" plural="never" prefix=" "/>
         <text variable="page" prefix=" "/>
       </if>
       <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
-        <label variable="locator" form="short" prefix=", "/>
+        <label variable="locator" form="short" plural="never" prefix=", "/>
         <text variable="page" prefix=" "/>
       </else-if>
     </choose>
@@ -578,7 +578,7 @@
   <macro name="locators-journal">
     <choose>
       <if type="article-journal">
-        <label variable="locator" form="short" prefix=" "/>
+        <label variable="locator" form="short" plural="never" prefix=" "/>
         <text variable="page" prefix=" "/>
       </if>
     </choose>
