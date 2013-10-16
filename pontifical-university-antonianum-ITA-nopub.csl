@@ -12,8 +12,8 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style (Italian, without publisher)</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2013-10-10T18:50:09+00:00</updated>
-    <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
+    <updated>2013-10-16T17:33:48+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="it">
     <style-options punctuation-in-quote="false"/>
@@ -257,6 +257,40 @@
       </else>
     </choose>
   </macro>
+  <macro name="volume-note">
+    <choose>
+      <if type="book motion_picture thesis" match="any">
+        <choose>
+          <if variable="volume">
+            <number variable="volume" form="roman" text-case="uppercase"/>
+          </if>
+          <else>
+            <!-- assuming number-of-volumes > 1 -->
+            <number variable="number-of-volumes" form="roman" text-case="uppercase" prefix="I-"/>
+          </else>
+        </choose>
+      </if>
+    </choose>  
+  </macro>
+  <macro name="volume">
+    <choose>
+      <if type="book motion_picture thesis" match="any">
+        <choose>
+          <if variable="volume">
+            <number variable="volume" form="roman" text-case="uppercase"/>
+          </if>
+          <else>
+            <choose>
+              <if variable="locator" match="none">
+                <!-- assuming number-of-volumes > 1 -->
+                <number variable="number-of-volumes" form="roman" text-case="uppercase" prefix="I-"/>
+              </if>
+            </choose>
+          </else>
+        </choose>
+      </if>
+    </choose>  
+  </macro>
   <macro name="description-note">
     <group delimiter=", ">
       <text macro="interviewer-note"/>
@@ -301,37 +335,10 @@
       </if>
     </choose>
   </macro>
-  <macro name="container-volume-note">
-    <choose>
-      <if type="bill book entry-dictionary entry-encyclopedia graphic motion_picture report song chapter paper-conference" match="any">
-        <choose>
-          <if variable="volume">
-            <number variable="volume" form="roman" text-case="uppercase"/>
-          </if>
-          <else>
-            <!-- assuming number-of-volumes > 1 -->
-            <number variable="number-of-volumes" form="roman" text-case="uppercase" prefix="I-"/>
-          </else>
-        </choose>
-      </if>
-    </choose>  
-  </macro>
   <macro name="container-volume">
     <choose>
-      <if type="bill book entry-dictionary entry-encyclopedia graphic motion_picture report song chapter paper-conference" match="any">
-        <choose>
-          <if variable="volume">
-            <number variable="volume" form="roman" text-case="uppercase"/>
-          </if>
-          <else>
-            <choose>
-              <if variable="locator" match="none">
-                <!-- assuming number-of-volumes > 1 -->
-                <number variable="number-of-volumes" form="roman" text-case="uppercase" prefix="I-"/>
-              </if>
-            </choose>
-          </else>
-        </choose>
+      <if type="bill entry-dictionary entry-encyclopedia graphic report song chapter paper-conference" match="any">
+        <number variable="volume" form="roman" text-case="uppercase"/>
       </if>
     </choose>  
   </macro>
@@ -498,7 +505,7 @@
               <choose>
                 <if variable="volume">
                   <group>
-                    <number variable="volume" form="roman" text-case="uppercase" prefix="p-l-s"/> <!--!!-->
+                    <number variable="volume" form="roman" text-case="uppercase"/>
                     <!--The "norme" say not to use "pp.". Although it's unclear whether this is specific to Italian, all locators (not just here) are currently forced to singular.-->
                     <label variable="locator" form="short" plural="never" prefix=", " suffix=" "/>
                   </group>
@@ -511,7 +518,7 @@
           </choose>
         </if>
         <else-if type="bill book graphic legal_case motion_picture report song" match="any">
-          <number variable="volume" form="roman" text-case="uppercase" suffix="(p-l-s), "/> <!--!!-->
+          <number variable="volume" form="roman" text-case="uppercase" suffix=", "/>
         </else-if>
       </choose>
       <text variable="locator"/>
@@ -734,10 +741,11 @@
           <group delimiter=", ">
             <text macro="contributors-note"/>
             <text macro="title-note"/>
+            <text macro="volume-note"/>
             <text macro="description-note"/>
             <text macro="secondary-contributors-note"/>
             <text macro="container-title-note"/>
-            <text macro="container-volume-note"/>
+            <text macro="container-volume"/>
             <text macro="container-contributors-note"/>
           </group>
           <text macro="locators-note"/>
@@ -759,6 +767,7 @@
       <group delimiter=", ">
         <text macro="contributors"/>
         <text macro="title"/>
+        <text macro="volume"/>
         <text macro="description"/>
         <text macro="secondary-contributors"/>
         <group delimiter=", ">
