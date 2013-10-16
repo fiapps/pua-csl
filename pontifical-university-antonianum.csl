@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2013-10-10T18:47:14+00:00</updated>
+    <updated>2013-10-11T17:49:47+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -273,6 +273,40 @@
       </if>
     </choose>
   </macro>
+  <macro name="container-volume-note">
+    <choose>
+      <if type="bill book entry-dictionary entry-encyclopedia graphic motion_picture report song chapter paper-conference" match="any">
+        <choose>
+          <if variable="volume">
+            <number variable="volume" form="roman" text-case="uppercase"/>
+          </if>
+          <else>
+            <!-- assuming number-of-volumes > 1 -->
+            <number variable="number-of-volumes" form="roman" text-case="uppercase" prefix="I-"/>
+          </else>
+        </choose>
+      </if>
+    </choose>  
+  </macro>
+  <macro name="container-volume">
+    <choose>
+      <if type="bill book entry-dictionary entry-encyclopedia graphic motion_picture report song chapter paper-conference" match="any">
+        <choose>
+          <if variable="volume">
+            <number variable="volume" form="roman" text-case="uppercase"/>
+          </if>
+          <else>
+            <choose>
+              <if variable="locator" match="none">
+                <!-- assuming number-of-volumes > 1 -->
+                <number variable="number-of-volumes" form="roman" text-case="uppercase" prefix="I-"/>
+              </if>
+            </choose>
+          </else>
+        </choose>
+      </if>
+    </choose>  
+  </macro>
   <macro name="collection-title">
     <text variable="collection-title" text-case="capitalize-first"/>
     <text variable="collection-number" prefix=" "/>
@@ -326,22 +360,8 @@
         <text variable="page" prefix=" "/>
         <text variable="locator" prefix=", "/>
       </else-if>
-      <else-if type="bill book graphic legal_case motion_picture report song chapter paper-conference" match="any">
-        <group prefix=", " delimiter=", ">
-          <group>
-            <text term="volume" form="short" suffix=" "/>
-            <number variable="volume" form="numeric"/>
-          </group>
-          <choose>
-            <if variable="locator" match="none">
-              <group>
-                <number variable="number-of-volumes" form="numeric"/>
-                <text term="volume" form="short" prefix=" " plural="true"/>
-              </group>
-            </if>
-          </choose>
-          <text macro="edition-note"/>
-        </group>
+      <else-if type="bill book graphic motion_picture report song chapter paper-conference" match="any">
+        <text macro="edition-note" prefix=", "/>
       </else-if>
     </choose>
   </macro>
@@ -360,30 +380,10 @@
         <text variable="page" prefix=" "/>
       </else-if>
       <else-if type="bill book graphic legal_case motion_picture report song" match="any">
-        <group prefix=", " delimiter=", ">
-          <group>
-            <text term="volume" form="short" suffix=" "/>
-            <number variable="volume" form="numeric"/>
-          </group>
-          <group>
-            <number variable="number-of-volumes" form="numeric"/>
-            <text term="volume" form="short" prefix=" " plural="true"/>
-          </group>
-          <text macro="edition"/>
-        </group>
+        <text macro="edition" prefix=", "/>
       </else-if>
       <else-if type="chapter paper-conference" match="any">
-        <group prefix=", " delimiter=", ">
-          <choose>
-            <if variable="page" match="none">
-              <group>
-                <text term="volume" form="short" suffix=" "/>
-                <number variable="volume" form="numeric"/>
-              </group>
-            </if>
-          </choose>
-          <text macro="edition"/>
-        </group>
+        <text macro="edition" prefix=", "/>
       </else-if>
     </choose>
   </macro>
@@ -467,8 +467,7 @@
               <choose>
                 <if variable="volume">
                   <group>
-                    <text term="volume" form="short" text-case="lowercase" suffix=" "/>
-                    <number variable="volume" form="numeric"/>
+                    <number variable="volume" form="roman" text-case="uppercase"/>
                     <!--The "norme" say not to use "pp.". Although it's unclear whether this is specific to Italian, all locators (not just here) are currently forced to singular.-->
                     <label variable="locator" form="short" plural="never" prefix=", " suffix=" "/>
                   </group>
@@ -481,7 +480,7 @@
           </choose>
         </if>
         <else-if type="bill book graphic legal_case motion_picture report song" match="any">
-          <number variable="volume" form="numeric" suffix=":"/>
+          <number variable="volume" form="roman" text-case="uppercase" suffix=", "/>
         </else-if>
       </choose>
       <text variable="locator"/>
@@ -499,18 +498,7 @@
       <else-if type="legal_case"/>
       <else>
         <group prefix=", ">
-        <choose>
-          <if variable="volume">
-            <group>
-              <text term="volume" form="short" text-case="lowercase" suffix=" "/>
-              <number variable="volume" form="numeric"/>
-              <label variable="locator" form="short" plural="never" prefix=", " suffix=" "/>
-            </group>
-          </if>
-          <else>
-            <label variable="locator" form="short" plural="never" suffix=" "/>
-          </else>
-        </choose>
+          <label variable="locator" form="short" plural="never" suffix=" "/>
           <text variable="locator"/>
         </group>
       </else>
@@ -524,18 +512,7 @@
         <text variable="page" prefix=" "/>
       </if>
       <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
-        <choose>
-          <if variable="volume">
-            <group>
-              <text term="volume" form="short" text-case="lowercase" prefix=", " suffix=" "/>
-              <number variable="volume" form="numeric"/>
-              <label variable="page" form="short" plural="never" prefix=", " suffix=" "/>
-            </group>
-          </if>
-          <else>
-            <label variable="page" form="short" plural="never" prefix=", " suffix=" "/>
-          </else>
-        </choose>
+        <label variable="page" form="short" plural="never" prefix=", " suffix=" "/>
         <text variable="page" prefix=" "/>
       </else-if>
     </choose>
@@ -550,18 +527,7 @@
           <else>
             <choose>
               <if variable="page">
-                <choose>
-                  <if variable="volume">
-                    <group>
-                      <text term="volume" form="short" text-case="lowercase" suffix=" "/>
-                      <number variable="volume" form="numeric"/>
-                      <label variable="page" form="short" plural="never" prefix=", " suffix=" "/>
-                    </group>
-                  </if>
-                  <else>
-                    <label variable="page" form="short" plural="never" suffix=" "/>
-                  </else>
-                </choose>
+                <label variable="page" form="short" plural="never" suffix=" "/>
                 <text variable="page" prefix=" "/>
               </if>
             </choose>
@@ -740,6 +706,7 @@
             <text macro="description-note"/>
             <text macro="secondary-contributors-note"/>
             <text macro="container-title-note"/>
+            <text macro="container-volume-note"/>
             <text macro="container-contributors-note"/>
           </group>
           <text macro="locators-note"/>
@@ -765,6 +732,7 @@
         <text macro="secondary-contributors"/>
         <group delimiter=", ">
           <text macro="container-title"/>
+          <text macro="container-volume"/>
           <text macro="container-contributors"/>
           <text macro="locators-chapter"/>
         </group>
