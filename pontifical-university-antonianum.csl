@@ -12,7 +12,7 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2013-10-16T17:04:42+00:00</updated>
+    <updated>2017-03-29T12:56:42+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -24,6 +24,38 @@
       <term name="editortranslator" form="verb">
         <single> Translated and edited by</single>
         <multiple> Translated and edited by</multiple>
+      </term>
+    </terms>
+  </locale>
+  <locale xml:lang="it">
+    <style-options punctuation-in-quote="false"/>
+    <terms>
+      <term name="et-al">e A.</term>
+      <term name="ibid">ibid.</term>
+      <term name="editor" form="short">
+        <single>a cura di</single>
+        <multiple>a cura di</multiple>
+      </term>
+      <term name="collection-editor" form="short">
+        <single>a cura di</single>
+        <multiple>a cura di</multiple>
+      </term>
+      <term name="editortranslator" form="verb-short">
+        <single>trad. da e a cura di</single>
+        <multiple>trad. da e a cura di</multiple>
+      </term>
+      <term name="editortranslator" form="verb">
+        <single> Tradotto da e a cura di</single>
+        <multiple> Tradotti da e a cura di</multiple>
+      </term>
+      <!-- At some point between 2013 and 2017 the default became pag./pagg. -->
+      <term name="page" form="short">
+        <single>p.</single>
+        <multiple>pp.</multiple>
+      </term>
+      <term name="number-of-pages" form="short">
+        <single>p.</single>
+        <multiple>pp.</multiple>
       </term>
     </terms>
   </locale>

@@ -12,14 +12,13 @@
     <summary>The Pontifical University Antonianum (Pontificia Università Antonianum) style (Italian, without publisher)</summary>
     <category field="theology"/>
     <category citation-format="note"/>
-    <updated>2013-10-16T17:33:48+00:00</updated>
+    <updated>2017-03-29T12:56:35+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="it">
     <style-options punctuation-in-quote="false"/>
     <terms>
       <term name="et-al">e A.</term>
-      <term name="and">e</term>
       <term name="ibid">ibid.</term>
       <term name="editor" form="short">
         <single>a cura di</single>
@@ -37,10 +36,15 @@
         <single> Tradotto da e a cura di</single>
         <multiple> Tradotti da e a cura di</multiple>
       </term>
-      <term name="ordinal-01">°</term>
-      <term name="ordinal-02">°</term>
-      <term name="ordinal-03">°</term>
-      <term name="ordinal-04">°</term>
+      <!-- At some point between 2013 and 2017 the default became pag./pagg. -->
+      <term name="page" form="short">
+        <single>p.</single>
+        <multiple>pp.</multiple>
+      </term>
+      <term name="number-of-pages" form="short">
+        <single>p.</single>
+        <multiple>pp.</multiple>
+      </term>
     </terms>
   </locale>
   <locale xml:lang="en">
